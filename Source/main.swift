@@ -14,6 +14,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			defer: true,
 		)
 		w.isReleasedWhenClosed = false
+
+		let label = NSTextField(labelWithString: "Hi, Cocoa!")
+		label.font = .systemFont(ofSize: 48, weight: .semibold)
+		w.contentView = label
+
 		w.center()
 		w.setFrameAutosaveName("MainWindow")
 		return w
