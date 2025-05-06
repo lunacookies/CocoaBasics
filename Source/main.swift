@@ -24,6 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		NSLayoutConstraint.activate([
 			label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
 			label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+			label.leftAnchor.constraint(greaterThanOrEqualTo: contentView.leftAnchor, constant: 30),
+			label.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: 30),
 		])
 
 		w.center()
