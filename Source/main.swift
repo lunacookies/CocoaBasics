@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		)
 		w.isReleasedWhenClosed = false
 		w.center()
+		w.setFrameAutosaveName("MainWindow")
 		return w
 	}()
 
