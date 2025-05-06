@@ -17,7 +17,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 		let label = NSTextField(labelWithString: "Hi, Cocoa!")
 		label.font = .systemFont(ofSize: 48, weight: .semibold)
-		w.contentView = label
+
+		label.translatesAutoresizingMaskIntoConstraints = false
+		let contentView = w.contentView!
+		contentView.addSubview(label)
+		NSLayoutConstraint.activate([
+			label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+			label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+		])
 
 		w.center()
 		w.setFrameAutosaveName("MainWindow")
