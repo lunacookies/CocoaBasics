@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			defer: true,
 		)
 		w.isReleasedWhenClosed = false
+		w.center()
 		return w
 	}()
 
