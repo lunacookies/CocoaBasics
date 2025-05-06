@@ -1,0 +1,7 @@
+{
+	"CFBundleInfoDictionaryVersion": "6.0",
+	"CFBundleIdentifier": "org.xoria.blog.Counter",
+	"CFBundlePackageType": "APPL",
+	"CFBundleExecutable": "Counter",
+	"CFBundleDisplayName": "Counter"
+}

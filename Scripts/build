@@ -1,0 +1,25 @@
+#!/bin/dash
+
+set -e
+
+swift format --in-place Source/*.swift
+
+buildDirectory="Build"
+infoJSONPath="Data/Info.json"
+
+rm -rf "$buildDirectory"
+
+bundleName=$(jq --raw-output ".CFBundleDisplayName" < "$infoJSONPath")
+executableName=$(jq --raw-output ".CFBundleExecutable" < "$infoJSONPath")
+bundlePath="$buildDirectory/$bundleName.app"
+
+mkdir -p "$bundlePath/Contents"
+plutil \
+	-convert binary1 \
+	-o "$bundlePath/Contents/Info.plist" \
+	"$infoJSONPath"
+
+mkdir -p "$bundlePath/Contents/MacOS"
+swiftc \
+	-o "$bundlePath/Contents/MacOS/$executableName" \
+	"Source/main.swift"
