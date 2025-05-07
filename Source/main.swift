@@ -8,7 +8,7 @@ NSApp.run()
 class AppDelegate: NSObject, NSApplicationDelegate {
 	lazy var window = {
 		let w = NSWindow(
-			contentRect: .init(x: 0, y: 0, width: 200, height: 100),
+			contentRect: .zero,
 			styleMask: [.titled, .closable, .miniaturizable, .resizable],
 			backing: .buffered,
 			defer: true,
@@ -28,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			label.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: 30),
 		])
 
+		w.layoutIfNeeded()
 		w.center()
 		w.setFrameAutosaveName("MainWindow")
 		return w
